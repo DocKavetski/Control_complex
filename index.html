@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Комплекс контроля</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="body">
+    <header class="header">
+      <nav>
+        <form class="nav-menu">
+          <button class="nav-button" type="button">Установки</button>
+          <button class="nav-button" type="button">Картотека</button>
+          <button class="nav-button" type="button">Журналы</button>
+          <button class="nav-button" type="button">Отчеты</button>
+          <button class="nav-button" type="button">Формы</button>
+        </form>
+      </nav>
+      <div class="today">
+        <div class="clock"></div>
+        <div class="date"></div>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- вводные параметры -->
+      <section class="parametrs tab hide">
+        <label for="">ФИО врача<input type="text" /></label>
+        <label for="">ФИО медсестры<input type="text" /></label>
+        <label for="">Праздничные дни<input type="text" /></label>
+        <label for=""><input type="text" /></label>
+      </section>
+      <!-- картотека -->
+      <section class="files tab">
+        <div class="row row--title">
+          <div>№ карты</div>
+          <div>Полин-ка</div>
+          <div>ФИО</div>
+          <div>Пол</div>
+          <div>Дата рождения</div>
+          <div>Город/село</div>
+          <div>Адрес</div>
+          <div>Диагноз</div>
+          <div>Телефон</div>
+          <div>Комм-рий</div>
+        </div>
+      </section>
+      <!-- журналы -->
+      <section class="log tab hide">журналы</section>
+      <!-- отчеты -->
+      <section class="reports tab hide">отчеты</section>
+      <!-- формы -->
+      <section class="forms tab hide">формы</section>
+    </main>
+    <footer></footer>
+
+    <script src="base.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
