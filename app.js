@@ -66,20 +66,27 @@ menu.addEventListener("click", function (event) {
 });
 
 function createRow(obj) {
-  document.querySelector(".files").insertAdjacentHTML(
-    "beforeend",
-    `<div class="row">
-<div>${obj["nCard"]}</div>
-<div>${obj["poly"]}</div>
-<div>${obj["fio"]}</div>
-<div>${obj["sex"]}</div>
-<div>${obj["birth"]}</div>
-<div>${obj["city"]}</div>
-<div>${obj["adress"]}</div>
-<div>${obj["diagnosis"]}</div>
-<div class="phone">${obj["phone"]}</div>
-<div>${obj["comment"]}</div>
-<div>`
+  document.querySelector(".files").insertAdjacentHTML("beforeend", 
+  `
+<div class="row">
+  <div>${obj["nCard"]}</div>
+  <div>${obj["poly"]}</div>
+  <div>${obj["fio"]}</div>
+  <div>${obj["sex"]}</div>
+  <div>${obj["birth"]}</div>
+  <div>${obj["city"]}</div>
+
+  <div class="row-adress">
+    <div>${obj["adress"][0]}</div>
+    <div>дом ${obj["adress"][1]},</div>
+    <div>кв. ${obj["adress"][2]}</div>
+  </div>
+
+  <div>${obj["diagnosis"]}</div>
+  <div class="phone">${obj["phone"]}</div>
+  <div>${obj["comment"]}</div>
+<div>
+  `
   );
 }
 
@@ -88,5 +95,7 @@ createRow(patient2);
 createRow(patient3);
 createRow(patient4);
 createRow(patient5);
+
+
 
 // });

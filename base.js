@@ -5,7 +5,7 @@ function Patient(
   sex,
   birth,
   city,
-  adress,
+  [adress, home, flat],
   diagnosis,
   phone,
   comment
@@ -16,7 +16,7 @@ function Patient(
   this.sex = sex;
   this.birth = birth;
   this.city = city;
-  this.adress = adress;
+  this.adress = [adress, home, flat];
   this.diagnosis = diagnosis;
   this.phone = phone;
   this.comment = comment;
@@ -29,7 +29,7 @@ let patient1 = new Patient(
   "Ж",
   "14.10.2010",
   "Город",
-  "Красного флота 4 - 12",
+  ['Красного флота', 4, 12],
   "F45.0",
   "+475985240592, +475985240509",
   "Передана"
@@ -42,7 +42,7 @@ let patient2 = new Patient(
   "Ж",
   "14.10.2010",
   "Город",
-  "Красного флота 4 - 12",
+ ['Красного флота', 4, 12],
   "F45.0",
   "+375291234567, +475985240509",
   "Передана"
@@ -55,7 +55,7 @@ let patient3 = new Patient(
   "Ж",
   "14.10.2010",
   "",
-  "ул. Дворцовая 10 - 45",
+  ['Дворцовая', 4, 12],
   "F43.22",
   "",
   ""
@@ -68,7 +68,7 @@ let patient4 = new Patient(
   "Ж",
   "14.10.2010",
   "Село",
-  "",
+  ["","",""],
   "F41.0",
   "+375291234567, +475985240592, +475985240509",
   "Передана"
@@ -81,8 +81,9 @@ let patient5 = new Patient(
   "Ж",
   "14.10.1976",
   "Город",
-  "красноармейская 11 - 156",
+  ['Демонская', 4, 12],
   "F45.0",
   "+375291234567, +475985240592, +475985240509",
   "Передана"
 );
+ 

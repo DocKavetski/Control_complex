@@ -83,6 +83,12 @@
 .files .row--title {
   font-weight: 700;
 }
+.files .row-adress {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
 .files .phone {
   font-size: 12px;
 }
