@@ -36,7 +36,11 @@ function time() {
 }
 setInterval(time, 1000);
 
-let tab = document.getElementsByClassName("nav-button");
+
+
+
+
+/* let tab = document.getElementsByClassName("nav-button");
 let tabContent = document.getElementsByClassName("tab");
 let menu = document.getElementsByClassName("nav-menu")[0];
 
@@ -63,7 +67,7 @@ menu.addEventListener("click", function (event) {
         break;
       }
   }
-});
+}); */
 
 function createRow(obj) {
   document.querySelector(".files").insertAdjacentHTML("beforeend", 
@@ -99,3 +103,39 @@ createRow(patient5);
 
 
 // });
+
+
+
+function tabMenu(){
+
+
+let tab = document.getElementsByClassName("nav-button");
+let tabContent = document.getElementsByClassName("tab");
+let menu = document.getElementsByClassName("nav-menu")[0];
+
+function hideTabContent(a) {
+  for (let i = a; i < tabContent.length; i++) {
+    tabContent[i].classList.add("hide");
+  }
+}
+hideTabContent(1);
+
+function showTabContent(b) {
+  if (tabContent[b].classList.contains("hide")) {
+    hideTabContent(0);
+    tabContent[b].classList.remove("hide");
+  }
+}
+
+menu.addEventListener("click", function (event) {
+  let target = event.target;
+  if (target.className == "nav-button") {
+    for (let i = 0; i < tab.length; i++)
+      if (target == tab[i]) {
+        showTabContent(i);
+        break;
+      }
+  }
+});}
+
+console.log(tabMenu())
