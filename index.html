@@ -10,12 +10,18 @@
   <body class="body">
     <header class="header">
       <nav>
-        <form class="nav-menu header-nav-menu">
-          <button class="header-nav-button" type="button">Установки</button>
-          <button class="header-nav-button" type="button">Картотека</button>
-          <button class="header-nav-button" type="button">Журналы</button>
-          <button class="header-nav-button" type="button">Отчеты</button>
-          <button class="header-nav-button" type="button">Формы</button>
+        <form class="header-nav-menu nav-menu">
+          <button class="header-nav-button button" type="button">
+            Установки
+          </button>
+          <button class="header-nav-button button" type="button">
+            Картотека
+          </button>
+          <button class="header-nav-button button" type="button">
+            Журналы
+          </button>
+          <button class="header-nav-button button" type="button">Отчеты</button>
+          <button class="header-nav-button button" type="button">Формы</button>
         </form>
       </nav>
       <div class="today">
@@ -26,14 +32,14 @@
 
     <main class="main">
       <!-- вводные параметры -->
-      <section class="parametrs header-nav-tab">
+      <section class="parametrs header-nav-tab hide">
         <label for="">ФИО врача<input type="text" /></label>
         <label for="">ФИО медсестры<input type="text" /></label>
         <label for="">Праздничные дни<input type="text" /></label>
         <label for=""><input type="text" /></label>
       </section>
       <!-- картотека -->
-      <section class="files header-nav-tab hide">
+      <section class="files header-nav-tab">
         <div class="row row--title">
           <div>№ карты</div>
           <div>Полин-ка</div>
@@ -50,7 +56,17 @@
       <!-- журналы -->
       <section class="log header-nav-tab hide">журналы</section>
       <!-- отчеты -->
-      <section class="reports header-nav-tab hide">отчеты</section>
+      <section class="reports header-nav-tab hide">
+        <div class="reports-nav-menu">
+          <button class="reports-nav-button button">Отчет за день</button>
+          <Button class="reports-nav-button button">Отчет за месяц</Button>
+          <Button class="reports-nav-button button">Отчет за год</Button>
+        </div>
+
+        <div class="reports-nav-tab hide">Отчет за день</div>
+        <div class="reports-nav-tab hide">Отчет за месяц</div>
+        <div class="reports-nav-tab hide">Отчет за год</div>
+      </section>
       <!-- формы -->
       <section class="forms header-nav-tab hide">формы</section>
     </main>

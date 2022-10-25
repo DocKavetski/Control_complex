@@ -1,6 +1,7 @@
 "use strict";
 
 // window.addEventListener("DOMContentLoaded", function () {
+
 function time() {
   let today = new Date();
   let hour = today.getHours();
@@ -29,15 +30,12 @@ function time() {
     month = `0${month}`;
   }
 
-  document.querySelector(
-    ".clock"
-  ).innerHTML = `${hour} : ${minutes} : ${seconds}`;
+  document.querySelector(".clock").innerHTML = `${hour}:${minutes}:${seconds}`;
   document.querySelector(".date").innerHTML = `${wDay} ${day}.${month} `;
 }
 setInterval(time, 1000);
 
-
-function createRow(obj) {
+/* function createRow(obj) {
   document.querySelector(".files").insertAdjacentHTML(
     "beforeend",
     `
@@ -62,11 +60,39 @@ function createRow(obj) {
   `
   );
 }
-
 createRow(patient1);
+ */
 
+function createRow(arr) {
+  document.querySelector(".files").insertAdjacentHTML(
+    "beforeend",
+    `
+<div class="row">
+<div>${arr[0]["nCard"]}</div>
+  <div>${arr[0]["poly"]}</div>
+  <div>${arr[0]["data"]["f"]} ${arr[0]["data"]["i"]} ${arr[0]["data"]["o"]}</div>
+  <div>${arr[0]["sex"]}</div>
+  <div>${arr[0]["birth"]["d"]}.${arr[0]["birth"]["m"]}.${arr[0]["birth"]["y"]} </div>
+  <div>${arr[0]["city"]}</div>
+ 
+  
+  <div class="row-adress">
+    <div>${arr[0]["adress"]["street"]}, </div>
+    <div>дом ${arr[0]["adress"]["home"]} </div>
+    <div>кв. ${arr[0]["adress"]["flat"]} </div>
+    
 
-// });
+  </div>
+  <div>F ${arr[0]["diagnosis"]} </div>
+  <div>${arr[0]["phone"].join(', ')} </div>
+  <div>${arr[0]["comment"]} </div>
+  <div> 
+  `
+
+  );
+}
+
+console.log(createRow(patiens));
 
 function tabMenu(block) {
   let tab = document.getElementsByClassName(`${block}-nav-button`);
@@ -78,7 +104,7 @@ function tabMenu(block) {
       tabContent[i].classList.add("hide");
     }
   }
-  hideTabContent(4);
+  hideTabContent(2);
 
   function showTabContent(b) {
     if (tabContent[b].classList.contains("hide")) {
@@ -89,7 +115,7 @@ function tabMenu(block) {
 
   menu.addEventListener("click", function (event) {
     let target = event.target;
-    if (target.className == `${block}-nav-button`) {
+    if (target.classList.contains(`${block}-nav-button`)) {
       for (let i = 0; i < tab.length; i++)
         if (target == tab[i]) {
           showTabContent(i);
@@ -99,4 +125,5 @@ function tabMenu(block) {
   });
 }
 
-console.log(tabMenu('header'));
+console.log(tabMenu("header"));
+console.log(tabMenu("reports"));
