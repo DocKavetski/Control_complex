@@ -37,41 +37,10 @@ function time() {
 setInterval(time, 1000);
 
 
-
-
-
-/* let tab = document.getElementsByClassName("nav-button");
-let tabContent = document.getElementsByClassName("tab");
-let menu = document.getElementsByClassName("nav-menu")[0];
-
-function hideTabContent(a) {
-  for (let i = a; i < tabContent.length; i++) {
-    tabContent[i].classList.add("hide");
-  }
-}
-hideTabContent(2);
-
-function showTabContent(b) {
-  if (tabContent[b].classList.contains("hide")) {
-    hideTabContent(0);
-    tabContent[b].classList.remove("hide");
-  }
-}
-
-menu.addEventListener("click", function (event) {
-  let target = event.target;
-  if (target.className == "nav-button") {
-    for (let i = 0; i < tab.length; i++)
-      if (target == tab[i]) {
-        showTabContent(i);
-        break;
-      }
-  }
-}); */
-
 function createRow(obj) {
-  document.querySelector(".files").insertAdjacentHTML("beforeend", 
-  `
+  document.querySelector(".files").insertAdjacentHTML(
+    "beforeend",
+    `
 <div class="row">
   <div>${obj["nCard"]}</div>
   <div>${obj["poly"]}</div>
@@ -95,47 +64,39 @@ function createRow(obj) {
 }
 
 createRow(patient1);
-createRow(patient2);
-createRow(patient3);
-createRow(patient4);
-createRow(patient5);
-
 
 
 // });
 
+function tabMenu(block) {
+  let tab = document.getElementsByClassName(`${block}-nav-button`);
+  let tabContent = document.getElementsByClassName(`${block}-nav-tab`);
+  let menu = document.getElementsByClassName(`${block}-nav-menu`)[0];
 
-
-function tabMenu(){
-
-
-let tab = document.getElementsByClassName("nav-button");
-let tabContent = document.getElementsByClassName("tab");
-let menu = document.getElementsByClassName("nav-menu")[0];
-
-function hideTabContent(a) {
-  for (let i = a; i < tabContent.length; i++) {
-    tabContent[i].classList.add("hide");
+  function hideTabContent(a) {
+    for (let i = a; i < tabContent.length; i++) {
+      tabContent[i].classList.add("hide");
+    }
   }
+  hideTabContent(4);
+
+  function showTabContent(b) {
+    if (tabContent[b].classList.contains("hide")) {
+      hideTabContent(0);
+      tabContent[b].classList.remove("hide");
+    }
+  }
+
+  menu.addEventListener("click", function (event) {
+    let target = event.target;
+    if (target.className == `${block}-nav-button`) {
+      for (let i = 0; i < tab.length; i++)
+        if (target == tab[i]) {
+          showTabContent(i);
+          break;
+        }
+    }
+  });
 }
-hideTabContent(1);
 
-function showTabContent(b) {
-  if (tabContent[b].classList.contains("hide")) {
-    hideTabContent(0);
-    tabContent[b].classList.remove("hide");
-  }
-}
-
-menu.addEventListener("click", function (event) {
-  let target = event.target;
-  if (target.className == "nav-button") {
-    for (let i = 0; i < tab.length; i++)
-      if (target == tab[i]) {
-        showTabContent(i);
-        break;
-      }
-  }
-});}
-
-console.log(tabMenu())
+console.log(tabMenu('header'));

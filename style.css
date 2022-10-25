@@ -25,22 +25,20 @@
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
-
-.nav-menu {
-  display: flex;
-  list-style-type: none;
-  gap: 20px;
-  color: black;
-  padding-left: 0;
-}
-
-.nav-button {
+.header-nav-button {
   cursor: pointer;
   padding-top: 26px;
   padding-bottom: 26px;
   border: none;
   background: white;
   font-size: 15px;
+}
+.header-nav-menu {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+  color: black;
+  padding-left: 0;
 }
 
 .clock, .date {
