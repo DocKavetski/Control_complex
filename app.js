@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 // window.addEventListener("DOMContentLoaded", function () {
 
@@ -64,24 +64,23 @@ createRow(patient1);
  */
 
 function createRow(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let month = `${arr[i]["birth"]["m"]}`;
+    if (arr[i]["birth"]["m"] < 10) {
+      month = `0${arr[i]["birth"]["m"]}`;
+    }
 
-for(let i=0; i<arr.length; i++){
-
-/*   let month;
-  if (arr[i]["birth"]["m"] < 10) {
-    month = `0${arr[i]["birth"]["m"]`
-   }
-   */
-
-  document.querySelector(".files").insertAdjacentHTML(
-    "beforeend",
-    `
+    document.querySelector(".files").insertAdjacentHTML(
+      "beforeend",
+      `
 <div class="row">
 <div>${arr[i]["nCard"]}</div>
   <div>${arr[i]["poly"]}</div>
-  <div>${arr[i]["data"]["f"]} ${arr[i]["data"]["i"]} ${arr[i]["data"]["o"]}</div>
+  <div>${arr[i]["data"]["f"]} ${arr[i]["data"]["i"]} ${
+        arr[i]["data"]["o"]
+      }</div>
   <div>${arr[i]["sex"]}</div>
-  <div>${arr[i]["birth"]["d"]}.${arr[i]["birth"]["m"]}.${arr[i]["birth"]["y"]} </div>
+  <div>${arr[i]["birth"]["d"]}.${month}.${arr[i]["birth"]["y"]} </div>
   <div>${arr[i]["city"]}</div>
  
   
@@ -93,13 +92,12 @@ for(let i=0; i<arr.length; i++){
 
   </div>
   <div>F ${arr[i]["diagnosis"]} </div>
-  <div>${arr[i]["phone"].join(', ')} </div>
+  <div>${arr[i]["phone"].join(", ")} </div>
   <div>${arr[i]["comment"]} </div>
   <div> 
   `
-
-  );
-}
+    );
+  }
 }
 console.log(createRow(patiens));
 

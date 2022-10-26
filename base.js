@@ -127,7 +127,7 @@ const patiens = [
     sex: "Ж",
     birth: {
       d: 17,
-      m: 6,
+      m: 10,
       y: 1996,
     },
     city: "Город",
