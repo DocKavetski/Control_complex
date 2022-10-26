@@ -65,6 +65,16 @@ createRow(patient1);
 
 function createRow(arr) {
   for (let i = 0; i < arr.length; i++) {
+    let diagnosis = arr[i]["diagnosis"];
+    if (Math.round(arr[i]["diagnosis"]) * 10 == arr[i]["diagnosis"] * 10) {
+      diagnosis = `${arr[i]["diagnosis"]}.0`;
+    }
+
+    let days = `${arr[i]["birth"]["d"]}`;
+    if (arr[i]["birth"]["d"] < 10) {
+      days = `0${arr[i]["birth"]["d"]}`;
+    }
+
     let month = `${arr[i]["birth"]["m"]}`;
     if (arr[i]["birth"]["m"] < 10) {
       month = `0${arr[i]["birth"]["m"]}`;
@@ -80,18 +90,17 @@ function createRow(arr) {
         arr[i]["data"]["o"]
       }</div>
   <div>${arr[i]["sex"]}</div>
-  <div>${arr[i]["birth"]["d"]}.${month}.${arr[i]["birth"]["y"]} </div>
+  <div>${days}.${month}.${arr[i]["birth"]["y"]} </div>
   <div>${arr[i]["city"]}</div>
- 
   
   <div class="row-adress">
-    <div>${arr[i]["adress"]["street"]}, </div>
-    <div>дом ${arr[i]["adress"]["home"]} </div>
-    <div>кв. ${arr[i]["adress"]["flat"]} </div>
+    <div>${arr[i]["adress"]["street"]},</div>
+    <div>д. ${arr[i]["adress"]["home"]},</div>
+    <div>кв. ${arr[i]["adress"]["flat"]}</div>
     
 
   </div>
-  <div>F ${arr[i]["diagnosis"]} </div>
+  <div>F${diagnosis}</div>
   <div>${arr[i]["phone"].join(", ")} </div>
   <div>${arr[i]["comment"]} </div>
   <div> 

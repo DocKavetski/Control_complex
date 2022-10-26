@@ -75,7 +75,7 @@
   align-items: center;
   text-align: center;
   gap: 5px;
-  grid-template-columns: minmax(50px, 0.5fr) minmax(50px, 0.5fr) minmax(50px, 1fr) minmax(50px, 0.3fr) minmax(50px, 0.7fr) minmax(50px, 0.5fr) minmax(50px, 1fr) minmax(50px, 0.5fr) minmax(50px, 1fr) minmax(50px, 0.5fr);
+  grid-template-columns: minmax(50px, 0.5fr) minmax(50px, 0.25fr) minmax(50px, 1fr) minmax(25px, 0.1fr) minmax(50px, 0.5fr) minmax(50px, 0.35fr) minmax(50px, 0.8fr) minmax(50px, 0.5fr) minmax(50px, 0.7fr) minmax(50px, 1fr);
   border-bottom: 1px solid black;
   padding-top: 5px;
   padding-bottom: 5px;
